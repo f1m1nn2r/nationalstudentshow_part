@@ -1,0 +1,78 @@
+
+
+
+@mixin virtual($content:null){content:$content; position:absolute;}
+@mixin conSize($wd:null, $hh:null, $lh:null){width:$wd; height:$hh; line-height:$lh;}
+@mixin dis-flex($ai:null, $jc:null, $ff:null){display:flex; align-items:$ai; justify-content:$jc; flex-flow:$ff;}
+@mixin dis-grid($num1:null, $num2:null){display:grid; grid-template-columns:repeat($num1, $num2 + #{fr});}
+@mixin font($fs:null, $fw:null, $ff:null, $color:null){font-size:$fs; font-weight:$fw; font-family:$ff; color:$color;}
+@mixin position-abs($top:null, $right:null, $bottom:null, $left:null, $zd:null){position:absolute; top:$top; right:$right; bottom:$bottom; left:$left; z-index:$zd;}
+
+@mixin array-txt(){@include conSize(null, 4.2vw, 4vw); border:2px solid $black; border-radius:35px; background:$white; transition:box-shadow .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    a{display:block; padding:0 1.8vw; @include font(2vw, 600, $mont, $black); @extend .uppercase;}
+    &:hover{background:$point; box-shadow:0 0 1vw 0.1vw #14ff00;}
+}
+
+body{position:relative; margin:0; padding:0;
+    &::before{@include virtual(""); @include conSize(100%, 100%, null); position:fixed; top:0; left:0; opacity:.3; background:url('https://nationalstudentshow.com/wp-content/themes/nssc18-build-1_2_6_3/library/img/background.png') center no-repeat; background-size:100% 100%;}
+}
+*{margin:0; padding:0; box-sizing:border-box}
+ul, li{list-style:none;}
+a{text-decoration:none;}
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$luck:'Luckiest Guy', cursive;
+$kou:'Koulen', cursive;
+$mont:'Montserrat', sans-serif;
+
+$black:#000;
+$white:#fff;
+$point:#14ff00;
+
+.uppercase{text-transform:uppercase}
+
+/*** 헤더 시작 ***/
+header{@include conSize(100%, null, null); position:fixed; top:3.5vw; z-index:99;
+    .header-inner{
+        ul{@include dis-flex(center, flex-end, null); column-gap:1.3vw; padding:0 6vw 0 0;
+            li{@include array-txt;}
+        }
+    }
+}
+/*** 헤더 끝 ***/
+
+/*** 플로팅 시작 ***/
+.floating-schedule{@include conSize(100%, null, null); position:fixed; bottom:3vw; z-index:99; @include dis-flex(null, center, null);
+    ul{
+        li{@include array-txt();}
+    }
+}
+/*** 플로팅 끝 ***/
+
+/*** 섹션01 시작 ***/
+.area01{
+    .section01{position:relative;
+        .back-txt{@include conSize(100%, null, 1); @include position-abs(-41vw, null, null, 0, -1); @include font(160vw, 700, $kou, $black); letter-spacing:-5vw;}
+        &-inner{@include dis-flex(null, space-between, null);
+            .txt-scroll-zone{@include conSize(null, 100vh, null); writing-mode:vertical-lr; display:-webkit-box; padding:0 0.7vw; overflow:hidden; background:$white;
+                span{display:block; @include font(2vw, 600, $mont, $black); @extend .uppercase;}
+            }
+            .right-column-zone{border:2px solid $black; border-top:0; border-bottom:0;}
+            .center-floating-txt{@include conSize(100%, 100%, null); @include dis-flex(center, center, null); @include position-abs(0, null, null, 0, null); @extend .uppercase;
+                h1{position:absolute; @include font(24vw, 700, $mont, $point);
+                    &.line-stroke{color:transparent; -webkit-text-stroke:1px $point;
+                        &.line-stroke_1{top:11vw}
+                        &.line-stroke_2{top:11.2vw}
+                        &.line-stroke_3{top:11.4vw}
+                        &.line-stroke_4{top:11.6vw}
+                        &.line-stroke_5{top:11.8vw}
+                        &.line-stroke_6{top:12vw}
+                    }
+                }
+            }
+        }
+    }
+}
+/*** 섹션01 끝 ***/

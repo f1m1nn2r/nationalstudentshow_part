@@ -1,0 +1,189 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  background: url("https://nationalstudentshow.com/wp-content/themes/nssc18-build-1_2_6_3/library/img/background.png") center no-repeat;
+  background-size: 100% 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.uppercase, .area01 .section01-inner .center-floating-txt, .area01 .section01-inner .txt-scroll-zone span, .floating-schedule ul li a, header .header-inner ul li a {
+  text-transform: uppercase;
+}
+
+/*** 헤더 시작 ***/
+header {
+  width: 100%;
+  position: fixed;
+  top: 3.5vw;
+  z-index: 99;
+}
+header .header-inner ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 1.3vw;
+  padding: 0 6vw 0 0;
+}
+header .header-inner ul li {
+  height: 4.2vw;
+  line-height: 4vw;
+  border: 2px solid #000;
+  border-radius: 35px;
+  background: #fff;
+  transition: box-shadow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+header .header-inner ul li a {
+  display: block;
+  padding: 0 1.8vw;
+  font-size: 2vw;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+header .header-inner ul li:hover {
+  background: #14ff00;
+  box-shadow: 0 0 1vw 0.1vw #14ff00;
+}
+
+/*** 헤더 끝 ***/
+/*** 플로팅 시작 ***/
+.floating-schedule {
+  width: 100%;
+  position: fixed;
+  bottom: 3vw;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+}
+.floating-schedule ul li {
+  height: 4.2vw;
+  line-height: 4vw;
+  border: 2px solid #000;
+  border-radius: 35px;
+  background: #fff;
+  transition: box-shadow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.floating-schedule ul li a {
+  display: block;
+  padding: 0 1.8vw;
+  font-size: 2vw;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+.floating-schedule ul li:hover {
+  background: #14ff00;
+  box-shadow: 0 0 1vw 0.1vw #14ff00;
+}
+
+/*** 플로팅 끝 ***/
+/*** 섹션01 시작 ***/
+.area01 .section01 {
+  position: relative;
+}
+.area01 .section01 .back-txt {
+  width: 100%;
+  line-height: 1;
+  position: absolute;
+  top: -41vw;
+  left: 0;
+  z-index: -1;
+  font-size: 160vw;
+  font-weight: 700;
+  font-family: "Koulen", cursive;
+  color: #000;
+  letter-spacing: -5vw;
+}
+.area01 .section01-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.area01 .section01-inner .txt-scroll-zone {
+  height: 100vh;
+  writing-mode: vertical-lr;
+  display: -webkit-box;
+  padding: 0 0.7vw;
+  overflow: hidden;
+  background: #fff;
+}
+.area01 .section01-inner .txt-scroll-zone span {
+  display: block;
+  font-size: 2vw;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+.area01 .section01-inner .right-column-zone {
+  border: 2px solid #000;
+  border-top: 0;
+  border-bottom: 0;
+}
+.area01 .section01-inner .center-floating-txt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.area01 .section01-inner .center-floating-txt h1 {
+  position: absolute;
+  font-size: 24vw;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: #14ff00;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px #14ff00;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke.line-stroke_1 {
+  top: 11vw;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke.line-stroke_2 {
+  top: 11.2vw;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke.line-stroke_3 {
+  top: 11.4vw;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke.line-stroke_4 {
+  top: 11.6vw;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke.line-stroke_5 {
+  top: 11.8vw;
+}
+.area01 .section01-inner .center-floating-txt h1.line-stroke.line-stroke_6 {
+  top: 12vw;
+}
+
+/*** 섹션01 끝 ***/
